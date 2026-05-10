@@ -1,7 +1,7 @@
 {
   "name": "bancodefilmes",
   "version": "1.0.0",
-  "description": "",
+  "description": "api de crepusculo",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.6.2"
   }
 }

@@ -1,16 +1,20 @@
 const express = require('express');
-const app = express();
-
+const connectDB = require('./config/database');
 const movieRoutes = require('./routes/movieRoutes');
 
-app.use(express.json());
-app.use(movieRoutes);
+const app = express();
+const PORT = 3000; // <--- Faltou definir a variável aqui!
 
+connectDB();
+
+app.use(express.json());
+
+app.use('/movies', movieRoutes);
 
 app.get('/', (req, res) => {
-  res.send('API de filmes funcionando 🎬');
+  res.send('API de filmes funcionando tá on ');
 });
 
-app.listen(3000, () => {
-  console.log('Servidor rodando em http://localhost:3000');
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
