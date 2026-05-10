@@ -1,10 +1,9 @@
-// config/database.js
 const mongoose = require('mongoose');
-
+require('dotenv').config(); 
 const connectDB = async () => {
     try {
-        // Substitua pela sua string de conexão do Atlas
-        await mongoose.connect('mongodb+srv://WelcomeUser:AbbR423d4b18@bancodefilmes.im5ovtm.mongodb.net/?appName=BancodeFilmes');
+        // Em vez de escrever a string aqui, usamos o process.env
+        await mongoose.connect(process.env.MONGO_URI); 
         console.log('MongoDB conectado com sucesso!');
     } catch (error) {
         console.error('Erro ao conectar ao MongoDB:', error.message);
@@ -13,4 +12,3 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
-
