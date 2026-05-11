@@ -1,8 +1,8 @@
 const Movie = require("../models/Movie");
 
-// Remova o 'let movies = []'! O Mongoose cuidará do armazenamento agora.
 
-// POST /movies: Salvar documento no banco
+
+
 exports.createMovie = async (req, res) => {
   try {
     // Validação básica (não precisamos mais pedir o 'id' aqui)
@@ -19,7 +19,7 @@ exports.createMovie = async (req, res) => {
   }
 };
 
-// GET /movies: Listar todos os documentos do banco
+
 exports.getMovies = async (req, res) => {
   try {
     const movies = await Movie.find();
@@ -29,7 +29,7 @@ exports.getMovies = async (req, res) => {
   }
 };
 
-// GET /movies/:id: Listar o documento por ID
+
 exports.getMovieById = async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
@@ -42,7 +42,7 @@ exports.getMovieById = async (req, res) => {
   }
 };
 
-// PUT /movies/:id: Atualizar o documento por ID
+
 exports.updateMovie = async (req, res) => {
   try {
     const id = req.params.id;
@@ -57,7 +57,7 @@ exports.updateMovie = async (req, res) => {
   }
 };
 
-// DELETE /movies/:id: Remover via ID do MongoDB
+
 exports.deleteMovie = async (req, res) => {
   try {
     const id = req.params.id;
