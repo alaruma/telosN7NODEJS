@@ -3,7 +3,7 @@ const connectDB = require('./config/database');
 const movieRoutes = require('./routes/movieRoutes');
 
 const app = express();
-const PORT = 3000; // <--- Faltou definir a variável aqui!
+const PORT = 3000; 
 
 connectDB();
 
