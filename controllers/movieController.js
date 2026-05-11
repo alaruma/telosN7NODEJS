@@ -1,11 +1,8 @@
 const Movie = require("../models/Movie");
 
-
-
-
 exports.createMovie = async (req, res) => {
   try {
-    // Validação básica (não precisamos mais pedir o 'id' aqui)
+    
     const { title, description, year } = req.body;
     
     if (!title || !description || !year) {
@@ -19,7 +16,6 @@ exports.createMovie = async (req, res) => {
   }
 };
 
-
 exports.getMovies = async (req, res) => {
   try {
     const movies = await Movie.find();
@@ -28,7 +24,6 @@ exports.getMovies = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 exports.getMovieById = async (req, res) => {
   try {
@@ -41,7 +36,6 @@ exports.getMovieById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 exports.updateMovie = async (req, res) => {
   try {
@@ -56,8 +50,6 @@ exports.updateMovie = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
-
-
 exports.deleteMovie = async (req, res) => {
   try {
     const id = req.params.id;
